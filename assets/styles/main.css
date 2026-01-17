@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+@font-face {
+  font-family: 'StratosSkyeng';
+  src: url('assets/fonts/StratosSkyeng.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1160px;
+  padding: 0 20px;
+}
+
+.content-container {
+  margin: 0 auto;
+  max-width: 1160px;
+}
+
+h2 {
+  font-family: "StratosSkyeng", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+
+
+@media (max-width: 768px) {
+  main {
+    padding: 0 16px;
+  }
+}

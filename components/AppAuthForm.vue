@@ -6,7 +6,7 @@
   >
     <div class="modal-content">
       <div class="logo">
-        <img src="/img/logo.png" alt="Logo" />
+        <img src="/img/logo.png" alt="Logo" >
       </div>
 
       <form @submit.prevent="handleSubmit">
@@ -18,7 +18,7 @@
               placeholder="Логин"
               required
               :class="{ 'error-field': emailError }"
-            />
+            >
           </div>
 
           <div class="input-wrapper">
@@ -28,7 +28,7 @@
               placeholder="Пароль"
               required
               :class="{ 'error-field': passwordError }"
-            />
+            >
             <button
               v-if="password.length > 0"
               type="button"
@@ -49,7 +49,7 @@
               placeholder="Повторите пароль"
               required
               :class="{ 'error-field': confirmPasswordError }"
-            />
+            >
             <button
               v-if="confirmPassword.length > 0"
               type="button"

@@ -9,7 +9,7 @@
               :alt="course.nameRU"
               class="course-image"
               @error="handleImageError"
-            />
+            >
           </div>
         </NuxtLink>
         <button
@@ -435,6 +435,7 @@ const updateProgress = async () => {
 }
 
 .card-content {
+  font-family: "Roboto", sans-serif;
   max-width: 300px;
   padding: 16px;
   flex-grow: 1;
@@ -444,6 +445,7 @@ const updateProgress = async () => {
 }
 
 .card-title {
+  font-family: inherit;
   margin: 0 0 12px 0;
   color: #1a2938;
   display: -webkit-box;
@@ -461,7 +463,7 @@ const updateProgress = async () => {
 
 .meta-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
   margin-top: auto;
 
@@ -472,6 +474,7 @@ const updateProgress = async () => {
 }
 
 .meta-item {
+  font-family: inherit;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -483,7 +486,7 @@ const updateProgress = async () => {
 }
 
 .meta-item.difficulty {
-  grid-column: span 3;
+  grid-column: span 1;
   justify-content: center;
   padding: 8px;
 }
@@ -548,7 +551,7 @@ const updateProgress = async () => {
 
 @media (max-width: 400px) {
   .card-image {
-    height: 300px;
+    height: 100%;
   }
 
   .card-title {

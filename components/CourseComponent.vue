@@ -1,7 +1,7 @@
 <template>
   <div class="course-card">
     <div class="course-image-wrapper">
-      <img :src="courseImage" :alt="course.nameRU" class="course-main-image" />
+      <img :src="courseImage" :alt="course.nameRU" class="course-main-image" >
       <h2 class="visually-hidden">{{ course.nameRU }}</h2>
     </div>
 
@@ -30,7 +30,7 @@
             :key="index"
             class="direction-item"
           >
-            <img src="@/assets/img/icon/Star.svg" />
+            <img src="@/assets/img/icon/Star.svg" >
             {{ direction }}
           </li>
         </ul>
@@ -38,13 +38,13 @@
     </div>
 
     <div class="mobile-image-containe">
-      <img src="@/assets/img/course/mobile.png" class="mobile-image" />
+      <img src="@/assets/img/course/mobile.png" class="mobile-image" >
     </div>
 
     <div class="benefits-section">
       <div class="content-wrapper">
         <h3 class="section-title-benefit">
-          Начните путь<br />
+          Начните путь<br >
           к новому телу:
         </h3>
         <ul class="benefits-list">
@@ -77,8 +77,8 @@
       </div>
 
       <div class="image-overlay">
-        <img src="../assets/img/course/vector.png" class="background-image" />
-        <img src="../assets/img/course/man.png" class="foreground-image" />
+        <img src="../assets/img/course/vector.png" class="background-image" >
+        <img src="../assets/img/course/man.png" class="foreground-image" >
       </div>
     </div>
   </div>
@@ -186,6 +186,9 @@ const handleAuthRedirect = () => {
     display: block;
   }
 }
+.content-wrapper {
+  padding: 40px;
+}
 
 .visually-hidden {
   position: absolute;
@@ -222,9 +225,9 @@ const handleAuthRedirect = () => {
 }
 
 .target-list {
+  max-width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 17px;
   justify-content: space-between;
 }
 
@@ -239,9 +242,10 @@ const handleAuthRedirect = () => {
   height: 141px;
   box-sizing: border-box;
   flex: 0 0 auto;
+  max-width: 32%;
 }
 
-.target-item-1 {
+/* .target-item-1 {
   width: 368px;
 }
 
@@ -251,7 +255,7 @@ const handleAuthRedirect = () => {
 
 .target-item-3 {
   width: 327px;
-}
+} */
 
 .target-item .number {
   font-size: 75px;
@@ -290,7 +294,6 @@ const handleAuthRedirect = () => {
 
 .benefits-list {
   list-style: none;
-  padding-left: 40px;
   margin-bottom: 28px;
   color: #999;
   font-size: 24px;
@@ -305,10 +308,8 @@ const handleAuthRedirect = () => {
 }
 
 .section-title-benefit {
-  padding-left: 40px;
-  margin-top: 40px;
   font-size: 60px;
-  margin-bottom: 0px;
+  margin-bottom: 28px;
 }
 
 .content-wrapper {
@@ -362,9 +363,19 @@ const handleAuthRedirect = () => {
   background: #a8d52b;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
+  .target-list {
+    flex-direction: column;
+  }
+
+  .target-item {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
   .course-card {
-    padding: 1.5rem;
+    padding: 0 16px;
   }
 
   .course-title {
@@ -372,7 +383,6 @@ const handleAuthRedirect = () => {
   }
 
   .section-title {
-    padding-top: 20px;
     font-size: 24px;
     font-weight: 500;
   }
@@ -417,6 +427,7 @@ const handleAuthRedirect = () => {
     position: absolute;
     display: block;
     bottom: 220px;
+    right: 0;;
   }
 
   .directions-section {
@@ -430,7 +441,6 @@ const handleAuthRedirect = () => {
   .section-title-benefit {
     font-size: 32px;
     font-weight: 500;
-    padding-top: 30px;
   }
 
   .benefits-list {
@@ -449,13 +459,15 @@ const handleAuthRedirect = () => {
 
     display: block;
     box-sizing: border-box;
+    padding: 30px;
+
   }
   h3 {
     font-size: 32px;
   }
   .auth-button {
-    width: 283px;
-    margin-left: 50px;
+    width: 100%;
+    margin: 0;
   }
 }
 </style>

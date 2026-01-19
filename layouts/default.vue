@@ -330,8 +330,6 @@ main {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   z-index: 1000;
-  width: 127px;
-  height: 52px;
   font-size: 18px;
 }
 
@@ -344,6 +342,7 @@ main {
   width: 100%;
   margin: 0 auto;
   position: relative;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {

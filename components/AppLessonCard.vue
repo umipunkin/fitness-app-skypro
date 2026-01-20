@@ -43,7 +43,7 @@ defineProps({
 .cards-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 25px;
 
   @media (max-width: 480px) {
     gap: 24px;

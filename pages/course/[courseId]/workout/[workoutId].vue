@@ -16,10 +16,12 @@
 
       <div v-if="workout.video" class="video-wrapper">
         <iframe
-          :src="workout.video"
-          title="Видео тренировки"
-          allowfullscreen
           class="video-player"
+          :src="workout.video"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
         />
       </div>
 

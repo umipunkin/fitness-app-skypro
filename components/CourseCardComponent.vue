@@ -9,7 +9,7 @@
               :alt="course.nameRU"
               class="course-image"
               @error="handleImageError"
-            >
+            />
           </div>
         </NuxtLink>
         <button
@@ -53,21 +53,17 @@
             <img src="../assets/img/icon/Difficulty.svg" class="icon" />
             <span class="meta-text">{{ formattedDifficulty }}</span>
           </div>
+        </div>
 
-          <div v-if="isProfilePage" class="progress-container">
-            <span class="progress-text">
-              <template v-if="isProgressLoading"
-                >Загрузка прогресса...</template
-              >
-              <template v-else
-                >Прогресс: {{ progressData.percentage }}%</template
-              >
-            </span>
-            <div
-              class="progress-bar"
-              :style="{ width: `${progressData.percentage}%` }"
-            />
-          </div>
+        <div v-if="isProfilePage" class="progress-container">
+          <span class="progress-text">
+            <template v-if="isProgressLoading">Загрузка прогресса...</template>
+            <template v-else>Прогресс: {{ progressData.percentage }}%</template>
+          </span>
+          <div
+            class="progress-bar"
+            :style="{ width: `${progressData.percentage}%` }"
+          />
         </div>
 
         <button
@@ -466,17 +462,13 @@ const updateProgress = async () => {
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
   margin-top: auto;
-
-  .progress-container {
-    grid-column: span 3;
-    padding: 8px;
-  }
 }
 
 .meta-item {
   font-family: inherit;
   display: flex;
   align-items: center;
+  align-self: center;
   gap: 6px;
   background: #f7f7f7;
   border-radius: 24px;
@@ -577,9 +569,7 @@ const updateProgress = async () => {
 }
 
 .progress-container {
-  margin-top: 16px;
-  width: 100%;
-  margin-bottom: 32px;
+  margin: 20px 0 40px;
 }
 
 .progress-bar {

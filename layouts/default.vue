@@ -3,7 +3,7 @@
     <header v-if="!isAuthPage" class="header">
       <div class="header-content">
         <div class="left-section" @click="goToHome">
-          <img src="/img/logo.png" alt="Логотип" class="logo" />
+          <img src="/img/logo.png" alt="Логотип" class="logo" >
           <span class="logo-text">Онлайн-тренировки для занятий дома</span>
         </div>
 
@@ -12,7 +12,7 @@
             <img
               class="desktop-icon"
               src="~/assets/img/icon/Profile-desktop.svg"
-            />
+            >
             <span class="desktop-name">{{ userDisplayName }}</span>
             <svg class="dropdown-icon" viewBox="0 0 10 6" fill="currentColor">
               <path d="M0 0l5 5 5-5" />
@@ -21,8 +21,8 @@
 
           <div v-if="showDropdown" class="dropdown-menu">
             <div class="dropdown-content">
-              <p>{{ userDisplayName }}</p>
-              <p>{{ currentUser.email }}</p>
+              <p class="user-name">{{ userDisplayName }}</p>
+              <p class="user-email">{{ currentUser?.user?.email }}</p>
               <button class="custom-btn-profile" @click="goToProfile">
                 Мой профиль
               </button>
@@ -154,6 +154,7 @@ onUnmounted(() => {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-bottom: 76px;
 }
 
 .header {
@@ -228,7 +229,7 @@ onUnmounted(() => {
   top: 100%;
   right: 0;
   background: white;
-  border-radius: 8px;
+  border-radius: 30px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   min-width: 200px;
   z-index: 1001;
@@ -239,8 +240,13 @@ onUnmounted(() => {
   padding: 30px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 10px;
+  text-align: center;
+  width: 206px;
+
+  .user-email {
+    color: #999999;
+  }
 }
 
 .desktop-name {
@@ -368,8 +374,9 @@ main {
     font-size: 16px;
     width: 120px;
     height: 48px;
-    right: 20px;
+    right: -45px;
     bottom: 20px;
+    left: auto;
   }
 
   .scroll-top svg {

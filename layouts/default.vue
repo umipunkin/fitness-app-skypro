@@ -8,7 +8,7 @@
         </div>
 
         <div v-if="currentUser" class="user-section">
-          <button class="user-dropdown" @click="showDropdown = !showDropdown">
+          <button class="user-dropdown" @click="toggleDropdown">
             <img
               class="desktop-icon"
               src="~/assets/img/icon/Profile-desktop.svg"
@@ -18,6 +18,12 @@
               <path d="M0 0l5 5 5-5" />
             </svg>
           </button>
+
+          <div 
+            v-if="showDropdown" 
+            class="dropdown-overlay" 
+            @click="closeDropdown"
+          />
 
           <div v-if="showDropdown" class="dropdown-menu">
             <div class="dropdown-content">
@@ -105,6 +111,16 @@ const goToProfile = () => {
 
 const goToHome = () => {
   router.push("/");
+};
+
+// Изменяем метод открытия дропдауна
+const toggleDropdown = () => {
+  showDropdown.value = !showDropdown.value;
+};
+
+// Добавляем метод для закрытия
+const closeDropdown = () => {
+  showDropdown.value = false;
 };
 
 const showScrollButton = ref(false);
@@ -224,6 +240,18 @@ onUnmounted(() => {
   color: #666;
 }
 
+/* Стили для оверлея */
+.dropdown-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 1000; /* Ниже дропдауна, но выше всего остального */
+  cursor: default;
+}
+
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -232,7 +260,7 @@ onUnmounted(() => {
   border-radius: 30px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   min-width: 200px;
-  z-index: 1001;
+  z-index: 1001; /* Выше оверлея */
   margin-top: 5px;
 }
 
@@ -243,10 +271,10 @@ onUnmounted(() => {
   gap: 10px;
   text-align: center;
   width: 206px;
+}
 
-  .user-email {
-    color: #999999;
-  }
+.dropdown-content .user-email {
+  color: #999999;
 }
 
 .desktop-name {

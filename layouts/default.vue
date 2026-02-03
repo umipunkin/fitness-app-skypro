@@ -113,12 +113,10 @@ const goToHome = () => {
   router.push("/");
 };
 
-// Изменяем метод открытия дропдауна
 const toggleDropdown = () => {
   showDropdown.value = !showDropdown.value;
 };
 
-// Добавляем метод для закрытия
 const closeDropdown = () => {
   showDropdown.value = false;
 };
@@ -248,7 +246,7 @@ onUnmounted(() => {
   right: 0;
   bottom: 0;
   background: transparent;
-  z-index: 1000; /* Ниже дропдауна, но выше всего остального */
+  z-index: 1000; 
   cursor: default;
 }
 
@@ -260,7 +258,7 @@ onUnmounted(() => {
   border-radius: 30px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   min-width: 200px;
-  z-index: 1001; /* Выше оверлея */
+  z-index: 1001;
   margin-top: 5px;
 }
 
